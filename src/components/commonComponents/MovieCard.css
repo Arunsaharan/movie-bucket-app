@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.movie-card-outer-wrap{
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.movie-card-inner-wrap{
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: left;
+    border-radius: 5px;
+}
+.movie-card-inner-wrap h1{
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: left;
+    width: 200px;
+}
+.movie-card-inner-wrap h3{
+    font-weight: 300;
+    font-size: 1rem;
+    color: #a3a3a3;
+}
+.movie-img-wrap{
+    height: 305px;
+    width: 206px;
+    overflow: hidden;
+}
+.movie-img{
+    border-radius: 5px;
+    height: 305px;
+    width: 206px;
+}
+.movie-card-inner-wrap:hover .movie-img{
+    transform: scale(1.25);
+    transition: 500ms;
+}
+.movie-card-bottom{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,16 @@
+.single-movie-wrap{
+    color: white;
+}
+.movie-tagline{
+    margin-bottom: 50px;
+}
+.movie-genres{
+    margin: 50px 25px; 
+    color: #ff0000;
+}
+.movie-overview{
+    margin: 50px 0;
+}
+.extra-data{
+    margin-bottom: 10px;
+}

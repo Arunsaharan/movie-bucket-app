@@ -1,0 +1,15 @@
+.btn-red{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font: inherit;
+    width:175px;
+    height: 35px;
+    margin-top: 25px;
+    color: #fff;
+    background-color: #ff0000;
+    border: none;
+    border-style: none;
+    cursor: pointer;
+}
