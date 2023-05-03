@@ -25,19 +25,20 @@ const Search = () => {
     clearTimeout();
   }
 
-  const fetchSearchTxt = async () => {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchText}&page=${currentPage}`;
-    const response = await fetch(url);
-    const jsonResponse = await response.json();
-
-    setSearchedMovie(jsonResponse.results);
-  };
-
   useEffect(() => {
+    const fetchSearchTxt = async () => {
+      // eslint-disable-next-line
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchText}&page=${currentPage}`;
+      const response = await fetch(url);
+      const jsonResponse = await response.json();
+
+      setSearchedMovie(jsonResponse.results);
+    };
+
     fetchSearchTxt();
+    // eslint-disable-next-line
   }, [submitBtn]);
 
-  console.log(searchedMovie);
   return (
     <>
       <Navbar />

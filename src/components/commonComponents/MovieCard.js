@@ -12,10 +12,11 @@ const MovieCard = ({ allMovies, media_type, count }) => {
         noOfMovie.map((movie) => {
           return (
             <Link
+              key={movie.id}
               to={`/singlemovie/${movie.id}`}
               state={{ media_type: `${media_type}` }}
             >
-              <div key={movie.id} className="movie-card-inner-wrap">
+              <div className="movie-card-inner-wrap">
                 <div className="movie-img-wrap">
                   <img
                     className="movie-img"

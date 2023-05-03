@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className="footer-wrap">
       <div className="logo">
-        <img src="/images/movie-bucket-logo.png" />
+        <img src="/images/movie-bucket-logo.png" alt="movie-bucket" />
       </div>
       <div className="address">The Last Stop For Your Movie Search </div>
       <div className="footer-icons">

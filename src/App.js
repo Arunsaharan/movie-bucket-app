@@ -10,15 +10,16 @@ import SingleMovieDetails from "./components/pages/SingleMovieDetails";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App"></div>
-      <Routes>
-        <Route path="/" exact Component={Home} />
-        <Route path="/popular" Component={Popular} />
-        <Route path="/trending" Component={Trending} />
-        <Route path="/tv shows" Component={TV} />
-        <Route path="/search" Component={Search} />
-        <Route path="/singlemovie/:id" Component={SingleMovieDetails} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/" exact Component={Home} />
+          <Route path="/popular" Component={Popular} />
+          <Route path="/trending" Component={Trending} />
+          <Route path="/tv shows" Component={TV} />
+          <Route path="/search" Component={Search} />
+          <Route path="/singlemovie/:id" Component={SingleMovieDetails} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

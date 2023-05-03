@@ -2,7 +2,6 @@ import "./HeroSection.css";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { poster_large } from "../config/config";
-
 import React, { useState } from "react";
 import Button from "./commonComponents/Button";
 import { Link } from "react-router-dom";
@@ -25,18 +24,14 @@ const HeroSection = ({ allMovies }) => {
 
   let movieName = filteredMovie[index];
 
-  function timeSlide() {
-    setTimeout(() => {
-      handleNext();
-    }, 2000);
-  }
-
   const description = movieName.overview;
 
   return (
     <div
       style={{
-        background: `url(${poster_large}${movieName.backdrop_path})`,
+        background:
+          movieName.backdrop_path &&
+          `url(${poster_large}${movieName.backdrop_path})`,
         maxWidth: "100%",
       }}
       className="hero-wrap-outer"

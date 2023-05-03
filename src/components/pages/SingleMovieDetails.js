@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./SingleMovieDetails.css";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { poster_large } from "../../config/config";
 import Button from "../commonComponents/Button";
 import Navbar from "../commonComponents/Navbar";
@@ -9,11 +9,6 @@ import { api_key } from "../../config/config";
 
 const SingleMovieDetails = () => {
   const [singleMovie, setSingleMovie] = useState();
-
-  //   const location = useLocation();
-  //   const media_type = location.state && location.state.media_type;
-  //   console.log(media_type);
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -26,7 +21,7 @@ const SingleMovieDetails = () => {
     };
     fetchSingleMovie();
   }, [id]);
-
+  console.log(singleMovie);
   return (
     <>
       <Navbar />
@@ -42,12 +37,17 @@ const SingleMovieDetails = () => {
                     ? `${poster_large}${singleMovie.backdrop_path}`
                     : "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
                 }
+                alt="Banner"
               />
             </Link>
           </div>
           {singleMovie.genres &&
             singleMovie.genres.map((item) => {
-              return <span className="movie-genres">{item?.name}</span>;
+              return (
+                <span key={item.id} className="movie-genres">
+                  {item?.name}
+                </span>
+              );
             })}
           <p className="movie-overview extra-data">
             Overview:{"  "} {singleMovie.overview}{" "}

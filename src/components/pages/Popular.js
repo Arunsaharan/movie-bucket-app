@@ -10,22 +10,24 @@ const Popular = () => {
   const [allMovies, setAllMovies] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&page=${currentPage}`;
-  const fetchAllMovies = async () => {
-    const getMovies = await fetch(url);
-    const jsonResponse = await getMovies.json();
-    setAllMovies(jsonResponse.results);
-  };
   useEffect(() => {
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&page=${currentPage}`;
+    const fetchAllMovies = async () => {
+      const getMovies = await fetch(url);
+      const jsonResponse = await getMovies.json();
+      setAllMovies(jsonResponse.results);
+    };
     fetchAllMovies();
   }, [currentPage]);
   return (
     <div>
       <Navbar />
       <Banner pageName="Popular" />
-      <MovieCard allMovies={allMovies} media_type="movie" />
-      <div>
-        <CommonButton setCurrentPage={setCurrentPage} />
+      <div className="home-wrap">
+        <MovieCard allMovies={allMovies} media_type="movie" />
+        <div>
+          <CommonButton setCurrentPage={setCurrentPage} />
+        </div>
       </div>
     </div>
   );

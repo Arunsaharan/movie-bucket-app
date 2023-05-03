@@ -38,14 +38,14 @@ function DrawerAppBar(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         <Link to={`/`}>
-          <img src="images/movie-bucket-logo.png" />
+          <img src="images/movie-bucket-logo.png" alt="movieLogo" />
         </Link>
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <Link to={`/${item}`}>
-            <ListItem key={item} disablePadding>
+          <Link to={`/${item}`} key={item}>
+            <ListItem disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText className="drawer-links" primary={item} />
               </ListItemButton>
@@ -84,12 +84,8 @@ function DrawerAppBar(props) {
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
-                <Link to={`/${item}`}>
-                  <Button
-                    className="drawer-links"
-                    key={item}
-                    sx={{ color: "#ff0000" }}
-                  >
+                <Link to={`/${item}`} key={item}>
+                  <Button className="drawer-links" sx={{ color: "#ff0000" }}>
                     {item}
                   </Button>
                 </Link>

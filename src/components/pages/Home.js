@@ -14,23 +14,25 @@ const Home = () => {
   const [trendingMovie, setTrendingMovie] = useState();
   const [tvShows, setTvShows] = useState();
 
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`;
-  const trendingUrl = `https://api.themoviedb.org/3/trending/all/week?api_key=${api_key}`;
-  const tvUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US`;
-  const fetchAllMovies = async () => {
-    const getMovies = await fetch(url);
-    const jsonResponse = await getMovies.json();
-    setAllMovies(jsonResponse.results);
-
-    const getTrending = await fetch(trendingUrl);
-    const jsonTrending = await getTrending.json();
-    setTrendingMovie(jsonTrending.results);
-
-    const getTvShows = await fetch(tvUrl);
-    const jsonTvShows = await getTvShows.json();
-    setTvShows(jsonTvShows.results);
-  };
   useEffect(() => {
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`;
+    const trendingUrl = `https://api.themoviedb.org/3/trending/all/week?api_key=${api_key}`;
+    const tvUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US`;
+
+    const fetchAllMovies = async () => {
+      const getMovies = await fetch(url);
+      const jsonResponse = await getMovies.json();
+      setAllMovies(jsonResponse.results);
+
+      const getTrending = await fetch(trendingUrl);
+      const jsonTrending = await getTrending.json();
+      setTrendingMovie(jsonTrending.results);
+
+      const getTvShows = await fetch(tvUrl);
+      const jsonTvShows = await getTvShows.json();
+      setTvShows(jsonTvShows.results);
+    };
+
     fetchAllMovies();
   }, []);
 
