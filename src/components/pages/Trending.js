@@ -22,7 +22,6 @@ const Trending = () => {
     fetchTrending();
   }, [currentPage]);
 
-  const trendingFours = allMovies && allMovies.slice(0, 4);
   return (
     <>
       <Navbar />

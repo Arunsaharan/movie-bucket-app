@@ -17,6 +17,7 @@ const Footer = () => {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noreferrer"
           href="https://www.linkedin.com/in/arun-saharan-512461258/"
         >
           <LinkedInIcon style={{ color: "#fff" }} />
@@ -24,6 +25,7 @@ const Footer = () => {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noreferrer"
           href="https://www.facebook.com/arun.social.fb/"
         >
           <FacebookIcon style={{ color: "#fff" }} />
@@ -31,6 +33,7 @@ const Footer = () => {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noreferrer"
           href="https://www.instagram.com/arun.social.ig"
         >
           <InstagramIcon style={{ color: "#fff" }} />
@@ -38,6 +41,7 @@ const Footer = () => {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noreferrer"
           href="https://mail.google.com/"
         >
           <EmailIcon style={{ color: "#fff" }} />
@@ -45,6 +49,7 @@ const Footer = () => {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noreferrer"
           href="https://github.com/Arunsaharan"
         >
           <GitHubIcon style={{ color: "#fff" }} />

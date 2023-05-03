@@ -12,14 +12,13 @@ const TV = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const url = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&page=${currentPage}`;
-  const fetchTvSeries = async () => {
-    const getMovies = await fetch(url);
-    const jsonResponse = await getMovies.json();
-    setAllMovies(jsonResponse.results);
-  };
-
   useEffect(() => {
+    const url = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&page=${currentPage}`;
+    const fetchTvSeries = async () => {
+      const getMovies = await fetch(url);
+      const jsonResponse = await getMovies.json();
+      setAllMovies(jsonResponse.results);
+    };
     fetchTvSeries();
   }, [currentPage]);
 
