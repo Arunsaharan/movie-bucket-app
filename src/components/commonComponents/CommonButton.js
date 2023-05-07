@@ -2,6 +2,16 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import "./CommonButton.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#ff0000",
+    },
+  },
+});
 
 export default function CommonButton({ setCurrentPage }) {
   function handleChange(page) {
@@ -14,15 +24,18 @@ export default function CommonButton({ setCurrentPage }) {
         margin: "50px auto",
       }}
     >
-      <Stack spacing={2}>
-        <Pagination
-          onChange={(e) => handleChange(e.target.textContent)}
-          count={500}
-          variant="outlined"
-          hideNextButton
-          hidePrevButton
-        />
-      </Stack>
+      <ThemeProvider theme={theme}>
+        <Stack spacing={2}>
+          <Pagination
+            onChange={(e) => handleChange(e.target.textContent)}
+            count={500}
+            variant="outlined"
+            color="primary"
+            hideNextButton
+            hidePrevButton
+          />
+        </Stack>
+      </ThemeProvider>
     </div>
   );
 }
