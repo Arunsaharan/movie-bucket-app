@@ -24,6 +24,7 @@ const Search = () => {
     setSearchText("");
     clearTimeout();
   }
+  console.log(searchedMovie);
 
   useEffect(() => {
     const fetchSearchTxt = async () => {

@@ -50,33 +50,36 @@ const Home = () => {
         <div className="go-to-wrap">
           <MovieCard allMovies={allMovies} count={4} media_type="movie" />
 
-          <button className="go-to-page">
+          <div className="go-to-page">
             <Link to="/popular">
-              <ArrowForwardIosIcon style={{ color: "#fff" }} fontSize="large" />
+              <span>Show All</span>
+              <ArrowForwardIosIcon className="nextBtn" fontSize="medium" />
             </Link>
-          </button>
+          </div>
         </div>
 
         <Heading headingText="TRENDING MOVIES" />
 
         <div className="go-to-wrap">
           <MovieCard allMovies={trendingFour} count={4} media_type="movie" />
-          <button className="go-to-page">
+          <div className="go-to-page">
             <Link to="/trending">
-              <ArrowForwardIosIcon style={{ color: "#fff" }} fontSize="large" />
+              <span>Show All</span>
+              <ArrowForwardIosIcon className="nextBtn" fontSize="medium" />
             </Link>
-          </button>
+          </div>
         </div>
 
         <Heading headingText="TV SHOWS" />
 
         <div className="go-to-wrap">
           <MovieCard allMovies={tvFour} count={4} media_type="tv" />
-          <button className="go-to-page">
+          <div className="go-to-page">
             <Link to="/tv shows">
-              <ArrowForwardIosIcon style={{ color: "#fff" }} fontSize="large" />
+              <span>Show All</span>
+              <ArrowForwardIosIcon className="nextBtn" fontSize="medium" />
             </Link>
-          </button>
+          </div>
         </div>
       </div>
       <Footer />

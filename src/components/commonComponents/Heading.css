@@ -1,24 +1,30 @@
-.heading{
-    margin-top: 50px;
-    letter-spacing: .64px;
-    color: #fff;
-    line-height: 25px;
-    font-weight: 700;
-    font-size: 2.5rem;
-    text-transform: uppercase;
+.heading {
+  margin-top: 50px;
+  letter-spacing: 0.64px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
 }
-.heading::after{
-    background: #ff0000;
-    content: "";
-    height: 3px;
-    position: absolute;
-    top: 40px;
-    left: 80px;
-    width: 75px;
+.heading::after {
+  background: #ff0000;
+  content: "";
+  height: 3px;
+  position: absolute;
+  top: 85%;
+  left: 1px;
+  width: 75px;
+}
+
+.heading:hover::after {
+  width: 175px;
+  transition: width 400ms ease-in-out;
 }
 
 @media (max-width: 400px) {
-    .heading{
-        font-size: 1.5rem;
-    }
+  .heading {
+    font-size: 1.5rem;
+  }
 }
