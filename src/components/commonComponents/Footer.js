@@ -15,6 +15,7 @@ const Footer = () => {
       <div className="address">The Last Stop For Your Movie Search </div>
       <div className="footer-icons">
         <a
+          aria-label="linkedin"
           className="footer-icon"
           target="_blank"
           rel="noreferrer"
@@ -23,6 +24,7 @@ const Footer = () => {
           <LinkedInIcon style={{ color: "#fff" }} />
         </a>
         <a
+          aria-label="facebook"
           className="footer-icon"
           target="_blank"
           rel="noreferrer"
@@ -31,6 +33,7 @@ const Footer = () => {
           <FacebookIcon style={{ color: "#fff" }} />
         </a>
         <a
+          aria-label="instagram"
           className="footer-icon"
           target="_blank"
           rel="noreferrer"
@@ -39,6 +42,7 @@ const Footer = () => {
           <InstagramIcon style={{ color: "#fff" }} />
         </a>
         <a
+          aria-label="gmail"
           className="footer-icon"
           target="_blank"
           rel="noreferrer"
@@ -47,6 +51,7 @@ const Footer = () => {
           <EmailIcon style={{ color: "#fff" }} />
         </a>
         <a
+          aria-label="github"
           className="footer-icon"
           target="_blank"
           rel="noreferrer"

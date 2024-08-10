@@ -42,7 +42,7 @@ const HeroSection = ({ allMovies }) => {
           background: `linear-gradient(90deg, rgb(39 40 41) 0%, rgb(39 40 41) 30%, rgba(83, 100, 141, 0) 100%)`,
         }}
       >
-        <button className="prev-btn" onClick={handlePrev}>
+        <button className="prev-btn" aria-label="previous" onClick={handlePrev}>
           <ArrowBackIosIcon className="prev-btn-inner" />
         </button>
         <div className="movie-info-wrap ">
@@ -60,7 +60,7 @@ const HeroSection = ({ allMovies }) => {
             <Button content="Watch Now" />
           </Link>
         </div>
-        <button className="next-btn" onClick={handleNext}>
+        <button className="next-btn" aria-label="next" onClick={handleNext}>
           <ArrowForwardIosIcon fontSize="small" />
         </button>
       </div>
