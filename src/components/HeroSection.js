@@ -4,7 +4,6 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { poster_large } from "../config/config";
 import React, { useState } from "react";
 import Button from "./commonComponents/Button";
-import { Link } from "react-router-dom";
 
 const HeroSection = ({ allMovies }) => {
   const [index, setIndex] = useState(0);
@@ -25,6 +24,8 @@ const HeroSection = ({ allMovies }) => {
   let movieName = filteredMovie[index];
 
   const description = movieName.overview;
+
+  let youtubeSearchUrl = `https://www.youtube.com/results?search_query=${movieName.title}`;
 
   return (
     <div
@@ -56,9 +57,9 @@ const HeroSection = ({ allMovies }) => {
           <div className="movie-description">
             {description && description.substring(0, 153)}...{" "}
           </div>
-          <Link to="https://www.youtube.com/watch?v=UhVjp48U2Oc?autoplay=1&mute=0&controls=0&fullscreen=1">
-            <Button content="Watch Now" />
-          </Link>
+          <a href={youtubeSearchUrl} target="_blank" rel="noopener noreferrer">
+            <Button content="Watch Trailer" />
+          </a>
         </div>
         <button className="next-btn" aria-label="next" onClick={handleNext}>
           <ArrowForwardIosIcon fontSize="small" />
