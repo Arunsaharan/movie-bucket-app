@@ -75,7 +75,7 @@ const Home = () => {
         <div className="go-to-wrap">
           <MovieCard allMovies={tvFour} count={4} media_type="tv" />
           <div className="go-to-page">
-            <Link to="/tv shows">
+            <Link to="/tv-shows">
               <span>Show All</span>
               <ArrowForwardIosIcon className="nextBtn" fontSize="medium" />
             </Link>

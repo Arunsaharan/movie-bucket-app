@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./SingleMovieDetails.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { poster_large } from "../../config/config";
 import Button from "../commonComponents/Button";
 import Navbar from "../commonComponents/Navbar";
@@ -10,9 +10,12 @@ import { api_key } from "../../config/config";
 const SingleMovieDetails = () => {
   const [singleMovie, setSingleMovie] = useState();
   const { id } = useParams();
+  const location = useLocation();
+  // console.log("location: " + location);
+  const { media_type } = location.state;
 
   useEffect(() => {
-    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`;
+    const url = `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${api_key}&language=en-US`;
     const fetchSingleMovie = async () => {
       const response = await fetch(url);
       const jsonResponse = await response.json();
@@ -20,14 +23,18 @@ const SingleMovieDetails = () => {
       setSingleMovie(jsonResponse);
     };
     fetchSingleMovie();
-  }, [id]);
+  }, [id, media_type]);
+
   console.log(singleMovie);
+
   return (
     <>
       <Navbar />
       {singleMovie && (
         <div className="single-movie-wrap home-wrap">
-          <h1 className="movie-name">{singleMovie.original_title}</h1>
+          <h1 className="movie-name">
+            {singleMovie.title || singleMovie.name}
+          </h1>
           <h1 className="movie-tagline">{singleMovie.tagline}</h1>
           <div className="movie-poster">
             <Link to={`${singleMovie.homepage}`}>
@@ -56,13 +63,14 @@ const SingleMovieDetails = () => {
             Status:{"  "} {singleMovie.status}{" "}
           </h3>
           <h3 className="movie-released-on extra-data">
-            Released On: {singleMovie.release_date}
+            Released On:{" "}
+            {singleMovie.release_date || singleMovie.first_air_date}
           </h3>
           <h3 className="movie-rating extra-data">
             Rating:{"  "} {singleMovie.vote_average}
           </h3>
           <h3 className="movie-duration extra-data">
-            Duration:{"  "} {singleMovie.runtime} Min
+            Duration:{"  "} {singleMovie.runtime || "Unknown"} Min
           </h3>
           <Link to={`${singleMovie.homepage}`}>
             <Button content="Know More" />
