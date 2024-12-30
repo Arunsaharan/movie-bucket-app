@@ -70,7 +70,9 @@ const SingleMovieDetails = () => {
             Rating:{"  "} {singleMovie.vote_average}
           </h3>
           <h3 className="movie-duration extra-data">
-            Duration:{"  "} {singleMovie.runtime || "Unknown"} Min
+            {singleMovie.runtime
+              ? ` Duration: ${singleMovie.runtime} Min`
+              : `Episodes: ${singleMovie.number_of_episodes}`}
           </h3>
           <Link to={`${singleMovie.homepage}`}>
             <Button content="Know More" />

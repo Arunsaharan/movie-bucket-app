@@ -24,7 +24,7 @@ const HeroSection = ({ allMovies }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 4500);
 
     return () => clearInterval(intervalId);
   }, [index, filteredMovie.length]);
