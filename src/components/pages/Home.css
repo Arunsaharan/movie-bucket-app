@@ -22,9 +22,14 @@
   background-color: #ff0000;
   position: relative;
 }
-.go-to-page:hover .nextBtn {
+
+.go-to-page a svg {
+  color: #fff;
+  transition: transform 400ms ease-in-out;
+}
+
+.go-to-page:hover a svg {
   transform: translateX(5px);
-  transition: all 400ms ease-in-out;
 }
 .go-to-page a {
   height: 40px;
@@ -37,7 +42,4 @@
   color: #fff;
   font-size: 18px;
   font-weight: 400;
-}
-.nextBtn {
-  color: #fff;
 }

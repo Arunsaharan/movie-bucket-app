@@ -42,10 +42,10 @@
   border-radius: 5px;
   height: 305px;
   width: 206px;
+  transition: transform 500ms ease-in-out;
 }
 .movie-card-inner-wrap:hover .movie-img {
   transform: scale(1.25);
-  transition: 500ms;
 }
 .movie-card-bottom {
   width: 90%;
