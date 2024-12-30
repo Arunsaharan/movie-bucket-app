@@ -2,7 +2,7 @@ import "./HeroSection.css";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { poster_large } from "../config/config";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./commonComponents/Button";
 
 const HeroSection = ({ allMovies }) => {
@@ -20,6 +20,14 @@ const HeroSection = ({ allMovies }) => {
   function handlePrev() {
     index === 0 ? setIndex(filteredMovie.length - 1) : setIndex(index - 1);
   }
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      handleNext();
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [index, filteredMovie.length]);
 
   let movieName = filteredMovie[index];
 
